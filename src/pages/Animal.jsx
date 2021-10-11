@@ -1,7 +1,7 @@
 import React from "react";
 
 const Animal = React.memo(() => {
-  return <div>Animal</div>;
+  return <div>isa </div>;
 });
 
 export default Animal;
