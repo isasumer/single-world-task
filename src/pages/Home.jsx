@@ -2,20 +2,30 @@ import React from "react";
 import ReactConfetti from "react-confetti";
 import styled from "styled-components";
 import HomeCard from "../components/HomeCard";
+import AnimatedShapes from "../components/AnimatedShapes";
+import mobile from "../Responsive";
 
 const Container = styled.div`
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 5px;
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png");
+  ${mobile({
+    justifyContent: "start",
+  })};
 `;
 const Header = styled.div`
   z-index: 2;
-  width: 70%;
+  width: 60%;
   text-align: center;
+  border-radius: 2%;
   background-color: #1eff008d;
+  ${mobile({
+    fontSize: "12px",
+  })};
 `;
 const CardContainer = styled.div`
   margin: 5px;
@@ -24,6 +34,12 @@ const CardContainer = styled.div`
   align-items: center;
   width: 70%;
   height: 55vh;
+  ${mobile({
+    height: "20vh",
+    flexDirection: "column",
+    justifyContent: "start",
+    alignItems: "start",
+  })};
 `;
 
 const Home = () => {
@@ -49,7 +65,7 @@ const Home = () => {
           backgroundColor="#dbee72a9"
         />
       </CardContainer>
-      {/* <AnimatedShapes /> */}
+      <AnimatedShapes />
       <ReactConfetti numberOfPieces="50" />
     </Container>
   );

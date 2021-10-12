@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import mobile from "../Responsive";
 
 export function HomeCard(props) {
   const x = useMotionValue(0);
@@ -39,7 +40,7 @@ export function HomeCard(props) {
               alt="logo"
             />
           </Logo>
-          <Link to={props.title}>
+          <Link to={props.title.toLowerCase()}>
             <Button>{props.title} Jokes</Button>
           </Link>
         </Wrapper>
@@ -57,6 +58,7 @@ const CardWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 15px;
 `;
 
 const CardContainer = styled(motion.div)`
@@ -69,6 +71,12 @@ const CardContainer = styled(motion.div)`
   background-color: ${(props) => props.color || "green"};
   position: relative;
   cursor: grab;
+  ${mobile({
+    height: "25vh",
+    flexDirection: "column",
+    justifyContent: "start",
+    alignItems: "start",
+  })};
 `;
 
 const CircleWrapper = styled.div`
@@ -90,6 +98,10 @@ const Circle = styled.div`
   z-index: 5;
   background-color: ${(props) => props.color || "green"};
   border-radius: 50%;
+  ${mobile({
+    width: "90%",
+    height: "80%",
+  })};
 `;
 
 const Wrapper = styled.div`
@@ -114,6 +126,10 @@ const Logo = styled(motion.div)`
       width: 95%;
       height: 95%;
     }
+    ${mobile({
+      width: "80%",
+      height: "80%",
+    })};
   }
 `;
 export const Button = styled.button`
@@ -132,20 +148,25 @@ export const Button = styled.button`
   @keyframes shake {
     10%,
     90% {
-      transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-2px, 0, 0);
     }
     20%,
     80% {
-      transform: translate3d(2px, 0, 0);
+      transform: translate3d(4px, 0, 0);
     }
     30%,
     50%,
     70% {
-      transform: translate3d(-2px, 0, 0);
+      transform: translate3d(-4px, 0, 0);
     }
     40%,
     60% {
-      transform: translate3d(2px, 0, 0);
+      transform: translate3d(4px, 0, 0);
     }
   }
+  ${mobile({
+    fontSize: "16px",
+    fontWeight: "300",
+    height: "30px",
+  })};
 `;
