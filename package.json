@@ -1,6 +1,6 @@
 {
-  "name": "single-earth",
-  "homepage": "http://isasumer.github.io/single-earth",
+  "name": "single-earth-task",
+  "homepage": "http://isasumer.github.io/single-earth-task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
